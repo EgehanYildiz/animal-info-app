@@ -1,0 +1,22 @@
+@media (max-width: 640px) { 
+    .card {
+      width: 80%;
+      padding: 1.5rem;
+      padding-left: 1.75rem;
+      overflow: auto; 
+    }
+  }
+  
+
+.card {
+  border: 3px solid black;
+  border-radius: 2%; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.375); 
+  height: 75vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  padding-left: 1.75rem;
+  width: auto;
+}
+  
