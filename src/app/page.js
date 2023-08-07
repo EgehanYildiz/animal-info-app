@@ -5,14 +5,23 @@ import MyCard from '@/components/MyCard';
         
 export default function Home() {
   return (
-    <div>
+    <div className="w-full min-h-screen">
       <Header />
-      <main className="grid grid-cols-2 gap-5 p-7 w-full justify-content-between align-items-center">
-        <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
-        <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
-        <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
-        <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
+      <main className="grid gap-7 pl-8 pt-7">
+        <div className="col-5 mr-5">
+          <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
+        </div>
+        <div className="col-5">
+          <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/> 
+        </div>
+        <div className="col-5 mr-5">
+          <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/>
+        </div>
+        <div className="col-5">
+          <MyCard source="https://upload.wikimedia.org/wikipedia/commons/c/cc/ACD-blue-spud.jpg" title="Cattle"/> 
+        </div>
       </main>
     </div>
   )
 }
+
