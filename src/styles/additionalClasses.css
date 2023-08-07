@@ -20,3 +20,15 @@
   width: auto;
 }
   
+@keyframes backgroundAnimate {
+  0%{
+    background-color: #6e6e6e; 
+  }
+  100% {
+    background-color: #272727;
+  }
+}
+
+.animate-bg {
+  animation: backgroundAnimate 2s infinite alternate;
+}
