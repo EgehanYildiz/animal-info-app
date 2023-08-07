@@ -1,5 +1,6 @@
 import { getAnimal } from "@/utilities/API";
 import "@/styles/additionalClasses.css"
+import Link from "next/link";
 
 export default async function Page({ params }){
   const res = await getAnimal(params.slug);
@@ -27,16 +28,19 @@ export default async function Page({ params }){
             <strong>Locations: </strong>{locations.join(', ')}
           </div>
           <div className="mb-4 text-50 text-xs">
-            <strong>Slogan: </strong>{slogan}
+            <strong>Slogan: </strong>{slogan ? slogan : "No Slogan"}
           </div>
           <div className="mb-4 text-50 text-xs">
             <strong>Lifespan: </strong>{lifespan}
           </div>
           <div className="mb-4 text-50 text-xs">
-            <strong>Weight: </strong>{weight}
+            <strong>Weight: </strong>{weight ? weight : "No Weight Info"}
           </div>
           <div className="mb-4 text-50 text-xs">
-            <strong>Height: </strong>{height}
+            <strong>Height: </strong>{height ? height : "No Height Info"}
+          </div>
+          <div className="flex justify-content-end align-items-end"> {/* This positions the link at the bottom-left */}
+            <Link href="/" className="no-underline text-0 p-1 border-round-lg border-solid border-2 surface-border bg-gray-100"> Go Back to Home </Link>
           </div>
         </div>
       </div>

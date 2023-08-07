@@ -47,7 +47,7 @@ export default function MyCard({ source, title }) {
             <Card title={title} footer={footer} header={header} className='w-full'>
                 <p className="m-0">
                     This card is designed to inform you about the animal "{title}".
-                    If you want more information, don't forget to click the link below.
+                    If you want more info, don't forget to click the link below.
                 </p>
             </Card>
         </div>
