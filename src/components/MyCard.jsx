@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client"
 import React, { useState, useEffect } from 'react'; 
@@ -8,13 +9,32 @@ export default function MyCard({ source, title }) {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const header = (
-        <img 
-            alt="Animal" 
-            src={source} 
-            className="w-full max-w-lg mx-auto" 
-            onLoad={() => setImageLoaded(true)}
-        />
+        <div 
+            style={{
+                position: 'relative',
+                width: '100%',
+                height: '20rem', // this sets a fixed height for the image container
+                overflow: 'hidden'
+            }}
+        >
+            <img 
+                alt="Animal" 
+                src={source} 
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: 'auto', 
+                    objectFit: 'cover'
+                }}
+                onLoad={() => setImageLoaded(true)}
+            />
+        </div>
     );
+    
+    
+    
 
     const footer = (
         <div className="flex flex-wrap justify-content-end">
@@ -32,5 +52,6 @@ export default function MyCard({ source, title }) {
             </Card>
         </div>
     );
+    
     
 }
