@@ -4,16 +4,19 @@
 import React, { useState, useEffect } from 'react'; 
 import { Card } from 'primereact/card';
 import Link from 'next/link';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function MyCard({ source, title }) {
     const [imageLoaded, setImageLoaded] = useState(false);
+    const isSmallScreen = useMediaQuery('(max-width:600px)');
+    const headerHeight = isSmallScreen ? '13rem' : '20rem';
 
     const header = (
         <div 
             style={{
                 position: 'relative',
                 width: '100%',
-                height: '20rem', // this sets a fixed height for the image container
+                height: headerHeight,
                 overflow: 'hidden'
             }}
         >
@@ -22,7 +25,7 @@ export default function MyCard({ source, title }) {
                 src={source} 
                 style={{
                     position: 'absolute',
-                    top: 0,
+                    top: -10,
                     left: 0,
                     width: '100%',
                     height: 'auto', 
@@ -47,7 +50,7 @@ export default function MyCard({ source, title }) {
             <Card title={title} footer={footer} header={header} className='w-full'>
                 <p className="m-0">
                     This card is designed to inform you about the animal "{title}".
-                    If you want more info, don't forget to click the link below.
+                    If you want more info, please click the link below.
                 </p>
             </Card>
         </div>

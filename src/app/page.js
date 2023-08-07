@@ -2,26 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import MyCard from '@/components/MyCard';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    // This function will be called whenever the window is resized.
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Attach the event listener
-    window.addEventListener('resize', handleResize);
-
-    // Return a cleanup function to remove the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);  // Empty dependency array ensures this effect runs once when component mounts and cleans up when it unmounts.
-
-  const isSmallScreen = windowWidth <= 600;
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   return (
     <div className="w-full min-h-screen">
